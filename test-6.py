@@ -42,7 +42,7 @@ else:
     ret = False
 
 count = 0  # count the number of pictures
-frame_interval = 30  # video frame count interval frequency
+frame_interval = 1  # video frame count interval frequency
 frame_interval_count = 0
 
 # loop read video frame
@@ -51,8 +51,7 @@ while ret:
     # store operation every time f frame
     if frame_interval_count % frame_interval == 0:
         save_image(count, frame)
-        logging.info("num:" + str(count) + ", frame: " +
-                     str(frame_interval_count))
+        print(frame_interval_count)
         count += 1
     frame_interval_count += 1
     cv2.waitKey(1)
