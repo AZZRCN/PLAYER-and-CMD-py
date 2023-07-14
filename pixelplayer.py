@@ -8,5 +8,5 @@ resized_image = cv2.resize(imagess, (width,height))
 os.system("cls")
 for i in resized_image:
     for j in i:
-        console.print("█", style=f"rgb({j[2]},{j[1]},{j[0]})", end="",overflow="ellipsis")
+        console.print("█", style=f"rgb({j[2]},{j[1]},{j[0]})", end="")
     console.print("")

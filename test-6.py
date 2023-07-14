@@ -10,11 +10,11 @@
 """
 
 import cv2
-import logging
+#import logging
 
 # log information settings
-logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s: %(message)s')
+#logging.basicConfig(level=logging.INFO,
+#                    format='%(asctime)s - %(levelname)s: %(message)s')
 
 
 def save_image(num, image):
@@ -31,7 +31,7 @@ def save_image(num, image):
     cv2.imwrite(image_path, image)
 
 
-file_path = '强风大背头.mp4'
+file_path = "D:\\BaiduNetdiskDownload\\29366741_da3-1-32.flv"
 
 vc = cv2.VideoCapture(file_path)  # import video files
 
@@ -39,21 +39,26 @@ vc = cv2.VideoCapture(file_path)  # import video files
 if vc.isOpened():
     ret, frame = vc.read()
 else:
-    ret = False
+    #ret = False
+    vc.release()
+    exit()
 
 count = 0  # count the number of pictures
-frame_interval = 1  # video frame count interval frequency
-frame_interval_count = 0
+#frame_interval = 1  # video frame count interval frequency
+#frame_interval_count = 0
 
 # loop read video frame
 while ret:
     ret, frame = vc.read()
     # store operation every time f frame
-    if frame_interval_count % frame_interval == 0:
-        save_image(count, frame)
-        print(frame_interval_count)
-        count += 1
-    frame_interval_count += 1
-    cv2.waitKey(1)
+    #if frame_interval_count % frame_interval == 0:
+    #    save_image(count, frame)
+    #    print(frame_interval_count)
+    #    count += 1
+    save_image(count,frame)
+    print(count)
+    count += 1
+    #frame_interval_count += 1
+    #cv2.waitKey(1)
 
 vc.release()

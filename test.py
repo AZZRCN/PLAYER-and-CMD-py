@@ -2,7 +2,6 @@ from random import randint
 from rich.text import Text
 from rich.console import Console
 import os
-
 c = Console()
 t = Text()
 stli = "1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm-=+_[]{}|\\\"':;<>,./?`~"

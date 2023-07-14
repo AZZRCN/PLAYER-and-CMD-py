@@ -80,8 +80,6 @@ def play_video(video_path, audio_play=True):
  
         # 帧数计数器+1
         read_frame = read_frame + 1
-        cv2.putText(frame, "[{}/{}]".format(str(read_frame), str(int(total_frame))), (read_frame, 50),
-                    cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 9), 2)
         dst = cv2.resize(frame, (1920//2, 1080//2), interpolation=cv2.INTER_CUBIC)  # 窗口大小
         # 计算当前播放时码
         timecode_h = int(read_frame / fps / 60 / 60)
@@ -90,7 +88,6 @@ def play_video(video_path, audio_play=True):
         s = math.modf(timecode_s)
         timecode_s = int(timecode_s)
         timecode_f = int(s[0] * fps)
-        print("{:0>2d}:{:0>2d}:{:0>2d}.{:0>2d}".format(timecode_h, timecode_m, timecode_s, timecode_f))
  
         # 显示帧图像
         cv2.imshow('image', dst)
