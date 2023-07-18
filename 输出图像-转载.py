@@ -31,7 +31,7 @@ def save_image(num, image):
     cv2.imwrite(image_path, image)
 
 
-file_path = "D:\\BaiduNetdiskDownload\\29366741_da3-1-32.flv"
+file_path = "强风大背头.mp4"
 
 vc = cv2.VideoCapture(file_path)  # import video files
 
@@ -48,7 +48,7 @@ count = 0  # count the number of pictures
 #frame_interval_count = 0
 
 # loop read video frame
-while ret:
+while ret and count <= 1000:
     ret, frame = vc.read()
     # store operation every time f frame
     #if frame_interval_count % frame_interval == 0:

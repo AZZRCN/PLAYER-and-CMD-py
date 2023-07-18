@@ -1,6 +1,6 @@
 from time import sleep
 from rich.console import Console
-from pagcd import pogcd
+from 基本宽高比 import pogcd
 c = Console()
 import os
 list = os.listdir()
